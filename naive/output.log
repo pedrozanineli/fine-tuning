@@ -1,0 +1,270 @@
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+2025-04-02 12:02:23.808 INFO: ===========VERIFYING SETTINGS===========
+2025-04-02 12:02:23.870 INFO: MACE version: 0.3.12
+2025-04-02 12:02:23.991 INFO: CUDA version: 12.4, CUDA device: 0
+2025-04-02 12:02:25.566 INFO: Using foundation model mace-mp-0 small as initial checkpoint.
+Using Materials Project MACE for MACECalculator with /home/p.zanineli/.cache/mace/20231210mace128L0_energy_epoch249model
+Using float64 for MACECalculator, which is slower but more accurate. Recommended for geometry optimization.
+2025-04-02 12:02:26.190 INFO: CUDA version: 12.4, CUDA device: 0
+2025-04-02 12:02:26.195 INFO: ===========LOADING INPUT DATA===========
+2025-04-02 12:02:26.196 INFO: Using heads: ['default']
+2025-04-02 12:02:26.197 INFO: =============    Processing head default     ===========
+2025-04-02 12:02:31.122 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2025-04-02 12:02:32.733 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2025-04-02 12:02:34.371 WARNING: Since ASE version 3.23.0b1, using stress_key 'stress' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'stress' to 'REF_stress'. You need to use --stress_key='REF_stress' to specify the chosen key name.
+2025-04-02 12:02:35.901 INFO: Training file 1/1 [11546 configs, 11546 energy, 11546 forces, 11546 stresses] loaded from '../data/train.xyz'
+2025-04-02 12:02:35.907 INFO: Total training set [11546 configs, 11546 energy, 11546 forces, 11546 stresses]
+2025-04-02 12:02:35.940 INFO: Using random 5% of training set for validation with indices saved in: ./valid_indices_3.txt
+2025-04-02 12:02:35.943 INFO: Validation set contains 577 configurations [577 energy, 577 forces, 577 stresses]
+2025-04-02 12:02:37.074 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2025-04-02 12:02:37.491 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2025-04-02 12:02:37.906 WARNING: Since ASE version 3.23.0b1, using stress_key 'stress' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'stress' to 'REF_stress'. You need to use --stress_key='REF_stress' to specify the chosen key name.
+2025-04-02 12:02:38.293 INFO: Test file 1/1 [2888 configs, 2888 energy, 2888 forces, 2888 stresses] loaded from '../data/test.xyz'
+2025-04-02 12:02:38.296 INFO: Total test set (2888 configs):
+2025-04-02 12:02:38.298 INFO: Default_default: 2888 configs, 2888 energy, 2888 forces, 2888 stresses
+2025-04-02 12:02:38.299 INFO: Total number of configurations: train=10969, valid=577, tests=[Default_default: 2888],
+2025-04-02 12:02:38.406 INFO: Atomic Numbers used: [8, 40]
+2025-04-02 12:02:38.408 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-04-02 12:02:38.408 INFO: Computing average Atomic Energies using least squares regression
+2025-04-02 12:02:38.709 INFO: Atomic Energies used (z: eV) for head default: {8: -4.675607659586305, 40: -18.31005190438511}
+2025-04-02 12:02:38.710 INFO: Processing datasets for head 'default'
+2025-04-02 12:03:02.053 INFO: Combining 1 list datasets for head 'default'
+2025-04-02 12:03:03.060 INFO: Head 'default' training dataset size: 10969
+2025-04-02 12:03:03.066 INFO: Computing average number of neighbors
+2025-04-02 12:03:12.052 INFO: Average number of neighbors: 42.15724411758686
+2025-04-02 12:03:12.053 INFO: During training the following quantities will be reported: energy, forces
+2025-04-02 12:03:12.053 INFO: ===========MODEL DETAILS===========
+2025-04-02 12:03:20.511 INFO: Loading FOUNDATION model
+2025-04-02 12:03:20.513 INFO: Using filtered elements: [8, 40]
+2025-04-02 12:03:20.514 INFO: Model configuration extracted from foundation model
+2025-04-02 12:03:20.515 INFO: Using universal loss function for fine-tuning
+2025-04-02 12:03:20.515 INFO: Message passing with hidden irreps 128x0e)
+2025-04-02 12:03:20.516 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-04-02 12:03:20.516 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-04-02 12:03:20.517 INFO: Distance transform for radial basis functions: None
+2025-04-02 12:03:22.547 INFO: Total number of parameters: 362138
+2025-04-02 12:03:22.548 INFO: 
+2025-04-02 12:03:22.548 INFO: ===========OPTIMIZER INFORMATION===========
+2025-04-02 12:03:22.549 INFO: Using ADAM as parameter optimizer
+2025-04-02 12:03:22.549 INFO: Batch size: 2
+2025-04-02 12:03:22.550 INFO: Using Exponential Moving Average with decay: 0.99
+2025-04-02 12:03:22.550 INFO: Number of gradient updates: 32907
+2025-04-02 12:03:22.551 INFO: Learning rate: 0.01, weight decay: 5e-07
+2025-04-02 12:03:22.552 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=1.000)
+2025-04-02 12:03:22.553 INFO: Using gradient clipping with tolerance=10.000
+2025-04-02 12:03:22.554 INFO: 
+2025-04-02 12:03:22.555 INFO: ===========TRAINING===========
+2025-04-02 12:03:22.555 INFO: Started training, reporting errors on validation set
+2025-04-02 12:03:22.556 INFO: Loss metrics on validation set
+2025-04-02 12:03:31.540 INFO: Initial: head: default, loss=0.03958149, RMSE_E_per_atom=  439.99 meV, RMSE_F=  442.02 meV / A
+2025-04-02 12:08:57.891 INFO: Epoch 0: head: default, loss=0.01352336, RMSE_E_per_atom=  118.73 meV, RMSE_F=  363.04 meV / A
+2025-04-02 12:14:21.047 INFO: Epoch 1: head: default, loss=0.01333860, RMSE_E_per_atom=  141.50 meV, RMSE_F=  360.11 meV / A
+2025-04-02 12:19:44.696 INFO: Epoch 2: head: default, loss=0.00597720, RMSE_E_per_atom=   83.18 meV, RMSE_F=  238.91 meV / A
+2025-04-02 12:25:08.170 INFO: Epoch 3: head: default, loss=0.00411536, RMSE_E_per_atom=   48.05 meV, RMSE_F=  207.81 meV / A
+2025-04-02 12:30:30.265 INFO: Epoch 4: head: default, loss=0.00691740, RMSE_E_per_atom=   40.74 meV, RMSE_F=  269.95 meV / A
+2025-04-02 12:35:52.261 INFO: Epoch 5: head: default, loss=0.00325945, RMSE_E_per_atom=   28.62 meV, RMSE_F=  189.48 meV / A
+2025-04-02 12:35:52.324 INFO: Training complete
+2025-04-02 12:35:52.326 INFO: 
+2025-04-02 12:35:52.327 INFO: ===========RESULTS===========
+2025-04-02 12:35:55.455 INFO: Loading checkpoint: ./checkpoints/Opt_ZrO2_small_MACE_run-3_epoch-5.pt
+2025-04-02 12:35:55.618 INFO: Loaded Stage one model from epoch 5 for evaluation
+2025-04-02 12:35:55.620 INFO: Saving model to checkpoints/Opt_ZrO2_small_MACE_run-3.model
+2025-04-02 12:35:55.931 INFO: Compiling model, saving metadata to Opt_ZrO2_small_MACE_compiled.model
+2025-04-02 12:35:57.541 INFO: Computing metrics for training, validation, and test sets
+2025-04-02 12:35:57.542 INFO: Evaluating train_default ...
+2025-04-02 12:52:26.165 INFO: Evaluating valid_default ...
+2025-04-02 12:52:29.594 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_default |           28.3      |        832.3     |         98.17     |
+| valid_default |           28.6      |        189.5     |         30.89     |
++---------------+---------------------+------------------+-------------------+
+2025-04-02 12:52:29.596 INFO: Evaluating Default_default ...
+2025-04-02 12:52:44.606 INFO: Error-table on TEST:
++-----------------+---------------------+------------------+-------------------+
+|   config_type   | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++-----------------+---------------------+------------------+-------------------+
+| Default_default |           63.3      |        191.3     |         38.71     |
++-----------------+---------------------+------------------+-------------------+
+2025-04-02 13:20:23.019 INFO: Done
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+2025-04-02 13:21:14.132 INFO: ===========VERIFYING SETTINGS===========
+2025-04-02 13:21:14.192 INFO: MACE version: 0.3.12
+2025-04-02 13:21:14.368 INFO: CUDA version: 12.4, CUDA device: 0
+2025-04-02 13:21:15.428 INFO: Using foundation model mace-mp-0 medium as initial checkpoint.
+Using Materials Project MACE for MACECalculator with /home/p.zanineli/.cache/mace/20231203mace128L1_epoch199model
+Using float64 for MACECalculator, which is slower but more accurate. Recommended for geometry optimization.
+2025-04-02 13:21:16.002 INFO: CUDA version: 12.4, CUDA device: 0
+2025-04-02 13:21:16.006 INFO: ===========LOADING INPUT DATA===========
+2025-04-02 13:21:16.007 INFO: Using heads: ['default']
+2025-04-02 13:21:16.008 INFO: =============    Processing head default     ===========
+2025-04-02 13:21:20.885 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2025-04-02 13:21:22.508 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2025-04-02 13:21:24.161 WARNING: Since ASE version 3.23.0b1, using stress_key 'stress' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'stress' to 'REF_stress'. You need to use --stress_key='REF_stress' to specify the chosen key name.
+2025-04-02 13:21:25.703 INFO: Training file 1/1 [11546 configs, 11546 energy, 11546 forces, 11546 stresses] loaded from '../data/train.xyz'
+2025-04-02 13:21:25.708 INFO: Total training set [11546 configs, 11546 energy, 11546 forces, 11546 stresses]
+2025-04-02 13:21:25.713 INFO: Using random 5% of training set for validation with indices saved in: ./valid_indices_3.txt
+2025-04-02 13:21:25.715 INFO: Validation set contains 577 configurations [577 energy, 577 forces, 577 stresses]
+2025-04-02 13:21:26.815 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2025-04-02 13:21:27.234 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2025-04-02 13:21:27.656 WARNING: Since ASE version 3.23.0b1, using stress_key 'stress' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'stress' to 'REF_stress'. You need to use --stress_key='REF_stress' to specify the chosen key name.
+2025-04-02 13:21:28.046 INFO: Test file 1/1 [2888 configs, 2888 energy, 2888 forces, 2888 stresses] loaded from '../data/test.xyz'
+2025-04-02 13:21:28.048 INFO: Total test set (2888 configs):
+2025-04-02 13:21:28.050 INFO: Default_default: 2888 configs, 2888 energy, 2888 forces, 2888 stresses
+2025-04-02 13:21:28.051 INFO: Total number of configurations: train=10969, valid=577, tests=[Default_default: 2888],
+2025-04-02 13:21:28.158 INFO: Atomic Numbers used: [8, 40]
+2025-04-02 13:21:28.159 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-04-02 13:21:28.160 INFO: Computing average Atomic Energies using least squares regression
+2025-04-02 13:21:28.278 INFO: Atomic Energies used (z: eV) for head default: {8: -4.675607659586305, 40: -18.31005190438511}
+2025-04-02 13:21:28.279 INFO: Processing datasets for head 'default'
+2025-04-02 13:21:51.909 INFO: Combining 1 list datasets for head 'default'
+2025-04-02 13:21:52.924 INFO: Head 'default' training dataset size: 10969
+2025-04-02 13:21:52.929 INFO: Computing average number of neighbors
+2025-04-02 13:22:01.923 INFO: Average number of neighbors: 42.15724411758686
+2025-04-02 13:22:01.924 INFO: During training the following quantities will be reported: energy, forces
+2025-04-02 13:22:01.925 INFO: ===========MODEL DETAILS===========
+2025-04-02 13:22:10.323 INFO: Loading FOUNDATION model
+2025-04-02 13:22:10.325 INFO: Using filtered elements: [8, 40]
+2025-04-02 13:22:10.327 INFO: Model configuration extracted from foundation model
+2025-04-02 13:22:10.327 INFO: Using universal loss function for fine-tuning
+2025-04-02 13:22:10.328 INFO: Message passing with hidden irreps 128x0e+128x1o)
+2025-04-02 13:22:10.328 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-04-02 13:22:10.329 INFO: Radial cutoff: 6.0 A (total receptive field for each atom: 12.0 A)
+2025-04-02 13:22:10.329 INFO: Distance transform for radial basis functions: None
+2025-04-02 13:22:12.803 INFO: Total number of parameters: 557210
+2025-04-02 13:22:12.803 INFO: 
+2025-04-02 13:22:12.804 INFO: ===========OPTIMIZER INFORMATION===========
+2025-04-02 13:22:12.805 INFO: Using ADAM as parameter optimizer
+2025-04-02 13:22:12.806 INFO: Batch size: 2
+2025-04-02 13:22:12.807 INFO: Using Exponential Moving Average with decay: 0.99
+2025-04-02 13:22:12.808 INFO: Number of gradient updates: 32907
+2025-04-02 13:22:12.808 INFO: Learning rate: 0.01, weight decay: 5e-07
+2025-04-02 13:22:12.809 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=1.000)
+2025-04-02 13:22:12.811 INFO: Using gradient clipping with tolerance=10.000
+2025-04-02 13:22:12.812 INFO: 
+2025-04-02 13:22:12.813 INFO: ===========TRAINING===========
+2025-04-02 13:22:12.814 INFO: Started training, reporting errors on validation set
+2025-04-02 13:22:12.815 INFO: Loss metrics on validation set
+2025-04-02 13:22:26.466 INFO: Initial: head: default, loss=0.03487340, RMSE_E_per_atom=  416.30 meV, RMSE_F=  412.46 meV / A
+2025-04-02 13:33:17.222 INFO: Epoch 0: head: default, loss=0.01225242, RMSE_E_per_atom=   89.90 meV, RMSE_F=  363.88 meV / A
+2025-04-02 13:44:03.602 INFO: Epoch 1: head: default, loss=0.00889485, RMSE_E_per_atom=   78.44 meV, RMSE_F=  306.13 meV / A
+2025-04-02 13:54:47.354 INFO: Epoch 2: head: default, loss=0.00724260, RMSE_E_per_atom=   73.62 meV, RMSE_F=  263.71 meV / A
+2025-04-02 14:05:30.948 INFO: Epoch 3: head: default, loss=0.00580884, RMSE_E_per_atom=   71.16 meV, RMSE_F=  244.42 meV / A
+2025-04-02 14:16:11.746 INFO: Epoch 4: head: default, loss=0.00512934, RMSE_E_per_atom=   54.07 meV, RMSE_F=  236.92 meV / A
+2025-04-02 14:26:50.021 INFO: Epoch 5: head: default, loss=0.00453614, RMSE_E_per_atom=   37.00 meV, RMSE_F=  222.65 meV / A
+2025-04-02 14:26:50.172 INFO: Training complete
+2025-04-02 14:26:50.173 INFO: 
+2025-04-02 14:26:50.174 INFO: ===========RESULTS===========
+2025-04-02 14:26:53.047 INFO: Loading checkpoint: ./checkpoints/Opt_ZrO2_medium_MACE_run-3_epoch-5.pt
+2025-04-02 14:26:53.213 INFO: Loaded Stage one model from epoch 5 for evaluation
+2025-04-02 14:26:53.214 INFO: Saving model to checkpoints/Opt_ZrO2_medium_MACE_run-3.model
+2025-04-02 14:26:53.662 INFO: Compiling model, saving metadata to Opt_ZrO2_medium_MACE_compiled.model
+2025-04-02 14:26:55.819 INFO: Computing metrics for training, validation, and test sets
+2025-04-02 14:26:55.821 INFO: Evaluating train_default ...
+2025-04-02 14:45:39.309 INFO: Evaluating valid_default ...
+2025-04-02 14:45:47.844 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_default |           38.7      |        430.1     |         50.73     |
+| valid_default |           37.0      |        222.6     |         36.29     |
++---------------+---------------------+------------------+-------------------+
+2025-04-02 14:45:47.845 INFO: Evaluating Default_default ...
+2025-04-02 14:46:24.378 INFO: Error-table on TEST:
++-----------------+---------------------+------------------+-------------------+
+|   config_type   | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++-----------------+---------------------+------------------+-------------------+
+| Default_default |           76.0      |        192.2     |         38.92     |
++-----------------+---------------------+------------------+-------------------+
+2025-04-02 15:17:16.864 INFO: Done
+cuequivariance or cuequivariance_torch is not available. Cuequivariance acceleration will be disabled.
+2025-04-02 15:19:31.338 INFO: ===========VERIFYING SETTINGS===========
+2025-04-02 15:19:31.339 INFO: MACE version: 0.3.12
+2025-04-02 15:19:32.244 INFO: CUDA version: 12.4, CUDA device: 0
+2025-04-02 15:19:34.462 INFO: Using foundation model mace-mp-0 large as initial checkpoint.
+Using Materials Project MACE for MACECalculator with /home/p.zanineli/.cache/mace/MACE_MPtrj_20229model
+Using float64 for MACECalculator, which is slower but more accurate. Recommended for geometry optimization.
+2025-04-02 15:19:35.423 INFO: CUDA version: 12.4, CUDA device: 0
+2025-04-02 15:19:35.438 INFO: ===========LOADING INPUT DATA===========
+2025-04-02 15:19:35.439 INFO: Using heads: ['default']
+2025-04-02 15:19:35.440 INFO: =============    Processing head default     ===========
+2025-04-02 15:19:40.502 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2025-04-02 15:19:42.147 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2025-04-02 15:19:43.812 WARNING: Since ASE version 3.23.0b1, using stress_key 'stress' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'stress' to 'REF_stress'. You need to use --stress_key='REF_stress' to specify the chosen key name.
+2025-04-02 15:19:45.369 INFO: Training file 1/1 [11546 configs, 11546 energy, 11546 forces, 11546 stresses] loaded from '../data/train.xyz'
+2025-04-02 15:19:45.374 INFO: Total training set [11546 configs, 11546 energy, 11546 forces, 11546 stresses]
+2025-04-02 15:19:45.465 INFO: Using random 5% of training set for validation with indices saved in: ./valid_indices_3.txt
+2025-04-02 15:19:45.468 INFO: Validation set contains 577 configurations [577 energy, 577 forces, 577 stresses]
+2025-04-02 15:19:46.682 WARNING: Since ASE version 3.23.0b1, using energy_key 'energy' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'energy' to 'REF_energy'. You need to use --energy_key='REF_energy' to specify the chosen key name.
+2025-04-02 15:19:47.100 WARNING: Since ASE version 3.23.0b1, using forces_key 'forces' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'forces' to 'REF_forces'. You need to use --forces_key='REF_forces' to specify the chosen key name.
+2025-04-02 15:19:47.523 WARNING: Since ASE version 3.23.0b1, using stress_key 'stress' is no longer safe when communicating between MACE and ASE. We recommend using a different key, rewriting 'stress' to 'REF_stress'. You need to use --stress_key='REF_stress' to specify the chosen key name.
+2025-04-02 15:19:47.919 INFO: Test file 1/1 [2888 configs, 2888 energy, 2888 forces, 2888 stresses] loaded from '../data/test.xyz'
+2025-04-02 15:19:47.921 INFO: Total test set (2888 configs):
+2025-04-02 15:19:47.923 INFO: Default_default: 2888 configs, 2888 energy, 2888 forces, 2888 stresses
+2025-04-02 15:19:47.924 INFO: Total number of configurations: train=10969, valid=577, tests=[Default_default: 2888],
+2025-04-02 15:19:48.027 INFO: Atomic Numbers used: [8, 40]
+2025-04-02 15:19:48.029 INFO: Isolated Atomic Energies (E0s) not in training file, using command line argument
+2025-04-02 15:19:48.030 INFO: Computing average Atomic Energies using least squares regression
+2025-04-02 15:19:48.171 INFO: Atomic Energies used (z: eV) for head default: {8: -4.675607659586305, 40: -18.31005190438511}
+2025-04-02 15:19:48.172 INFO: Processing datasets for head 'default'
+2025-04-02 15:19:58.574 INFO: Combining 1 list datasets for head 'default'
+2025-04-02 15:19:59.076 INFO: Head 'default' training dataset size: 10969
+2025-04-02 15:19:59.082 INFO: Computing average number of neighbors
+2025-04-02 15:20:07.068 INFO: Average number of neighbors: 19.732091883655894
+2025-04-02 15:20:07.069 INFO: During training the following quantities will be reported: energy, forces
+2025-04-02 15:20:07.070 INFO: ===========MODEL DETAILS===========
+2025-04-02 15:20:15.127 INFO: Loading FOUNDATION model
+2025-04-02 15:20:15.130 INFO: Using filtered elements: [8, 40]
+2025-04-02 15:20:15.131 INFO: Model configuration extracted from foundation model
+2025-04-02 15:20:15.132 INFO: Using universal loss function for fine-tuning
+2025-04-02 15:20:15.132 INFO: Message passing with hidden irreps 256x0e+256x1o)
+2025-04-02 15:20:15.133 INFO: 2 layers, each with correlation order: 3 (body order: 4) and spherical harmonics up to: l=3
+2025-04-02 15:20:15.134 INFO: Radial cutoff: 4.5 A (total receptive field for each atom: 9.0 A)
+2025-04-02 15:20:15.134 INFO: Distance transform for radial basis functions: None
+2025-04-02 15:20:18.210 INFO: Total number of parameters: 1882904
+2025-04-02 15:20:18.211 INFO: 
+2025-04-02 15:20:18.211 INFO: ===========OPTIMIZER INFORMATION===========
+2025-04-02 15:20:18.212 INFO: Using ADAM as parameter optimizer
+2025-04-02 15:20:18.213 INFO: Batch size: 2
+2025-04-02 15:20:18.214 INFO: Using Exponential Moving Average with decay: 0.99
+2025-04-02 15:20:18.215 INFO: Number of gradient updates: 32907
+2025-04-02 15:20:18.216 INFO: Learning rate: 0.01, weight decay: 5e-07
+2025-04-02 15:20:18.216 INFO: WeightedEnergyForcesLoss(energy_weight=1.000, forces_weight=1.000)
+2025-04-02 15:20:18.219 INFO: Using gradient clipping with tolerance=10.000
+2025-04-02 15:20:18.220 INFO: 
+2025-04-02 15:20:18.221 INFO: ===========TRAINING===========
+2025-04-02 15:20:18.221 INFO: Started training, reporting errors on validation set
+2025-04-02 15:20:18.222 INFO: Loss metrics on validation set
+2025-04-02 15:20:34.470 INFO: Initial: head: default, loss=0.03693405, RMSE_E_per_atom=  449.60 meV, RMSE_F=  401.72 meV / A
+2025-04-02 15:32:29.778 INFO: Epoch 0: head: default, loss=0.00778857, RMSE_E_per_atom=   76.79 meV, RMSE_F=  275.69 meV / A
+2025-04-02 15:44:20.735 INFO: Epoch 1: head: default, loss=0.00775340, RMSE_E_per_atom=  104.78 meV, RMSE_F=  271.08 meV / A
+2025-04-02 15:56:12.062 INFO: Epoch 2: head: default, loss=0.00740729, RMSE_E_per_atom=   78.36 meV, RMSE_F=  274.29 meV / A
+2025-04-02 16:08:04.157 INFO: Epoch 3: head: default, loss=0.00308108, RMSE_E_per_atom=   43.60 meV, RMSE_F=  173.67 meV / A
+2025-04-02 16:19:51.045 INFO: Epoch 4: head: default, loss=0.00536929, RMSE_E_per_atom=   64.61 meV, RMSE_F=  240.61 meV / A
+2025-04-02 16:31:37.707 INFO: Epoch 5: head: default, loss=0.00267233, RMSE_E_per_atom=   25.41 meV, RMSE_F=  170.98 meV / A
+2025-04-02 16:31:37.847 INFO: Training complete
+2025-04-02 16:31:37.848 INFO: 
+2025-04-02 16:31:37.849 INFO: ===========RESULTS===========
+2025-04-02 16:31:40.207 INFO: Loading checkpoint: ./checkpoints/Opt_ZrO2_large_MACE_run-3_epoch-5.pt
+2025-04-02 16:31:40.473 INFO: Loaded Stage one model from epoch 5 for evaluation
+2025-04-02 16:31:40.474 INFO: Saving model to checkpoints/Opt_ZrO2_large_MACE_run-3.model
+2025-04-02 16:31:40.995 INFO: Compiling model, saving metadata to Opt_ZrO2_large_MACE_compiled.model
+2025-04-02 16:31:43.263 INFO: Computing metrics for training, validation, and test sets
+2025-04-02 16:31:43.265 INFO: Evaluating train_default ...
+2025-04-02 16:50:25.905 INFO: Evaluating valid_default ...
+2025-04-02 16:50:36.098 INFO: Error-table on TRAIN and VALID:
++---------------+---------------------+------------------+-------------------+
+|  config_type  | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++---------------+---------------------+------------------+-------------------+
+| train_default |           29.3      |        344.0     |         40.57     |
+| valid_default |           25.4      |        171.0     |         27.87     |
++---------------+---------------------+------------------+-------------------+
+2025-04-02 16:50:36.099 INFO: Evaluating Default_default ...
+2025-04-02 16:51:19.886 INFO: Error-table on TEST:
++-----------------+---------------------+------------------+-------------------+
+|   config_type   | RMSE E / meV / atom | RMSE F / meV / A | relative F RMSE % |
++-----------------+---------------------+------------------+-------------------+
+| Default_default |           58.4      |        161.1     |         32.62     |
++-----------------+---------------------+------------------+-------------------+
+2025-04-02 17:22:21.248 INFO: Done
